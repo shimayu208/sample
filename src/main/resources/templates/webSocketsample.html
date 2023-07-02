@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>WebSocketチャットクライアント</title>
+</head>
+<body>
+  <div id="state" style="border: 1px solid #000; width: 10rem;"></div>
+  <div>
+    <input id="message" type="text" style="width: 20rem;">
+    <input id="send" type="button" value="送信"/>
+  </div>
+  <ul id="list"></ul>
+  <script type="text/javascript">
+    // Web Socketの生成
+    var webSocket = new WebSocket("ws://127.0.0.1/Bible_Manage/sample");
+    //接続成功時
+    webSocket.onopen = function () {
+      document.getElementById("state").innerText = "接続成功";
+      //サーバーからのメッセージを受信時した時の処理
+      webSocket.onmessage = function (event) {
+        var li = document.createElement("li");
+        li.innerText = event.data;
+        document.getElementById("list").appendChild(li);
+      }
+    };
+    //接続エラー時
+    webSocket.onerror = function() {
+      document.getElementById("state").innerText = "接続失敗";
+    };
+    //送信ボタンがクリックされた時の処理
+    document.getElementById("send").addEventListener("click", function() {
+      //サーバーにメッセージを送信
+      var inputElement = document.getElementById('message');
+      webSocket.send(inputElement.value);
+      inputElement.value = "";
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+plugins {
+	id 'org.springframework.boot' version '2.7.4'
+	id 'io.spring.dependency-management' version '1.0.14.RELEASE'
+	id 'java'
+}
+
+group = 'jp.co.macs'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+	//maven{
+		//url "file:/C:/macsDev/m2"
+	//}
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	runtimeOnly 'org.postgresql:postgresql'
+	compileOnly 'org.projectlombok:lombok'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.2'
+	//websocketóp
+	implementation 'org.springframework.boot:spring-boot-starter-websocket'
+//	implementation 'org.webjars:webjars-locator-core'
+	//implementation 'org.webjars:sockjs-client:1.0.+'
+	//implementation 'org.webjars:stomp-websocket:2.3.+'
+	//implementation 'org.webjars:jquery:3.1.+'
+	//implementation 'com.fasterxml.jackson.core:jackson-core'
+	//implementation 'com.fasterxml.jackson.core:jackson-databind'
+	implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.13.0'
+	implementation 'net.minidev:json-smart:2.4.7' //Jsonïœä∑Ç≈ïKóv
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.security:spring-security-test'
+	implementation 'org.springframework.boot:spring-boot-starter-activemq'
+	implementation 'org.springframework:spring-jms'
+	implementation 'org.springframework.statemachine:spring-statemachine-starter'
+	implementation 'org.springframework.statemachine:spring-statemachine-core'
+//	implementation  'org.springframework.statemachine:spring-statemachine-starter'
+	
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
+//artifacts{
+	//achives sourceJar
+//}
+//publishÇÃê›íË
+//publishing{
+	//publifications{
+		//mavenJava(MavenPublification){
+			//from components.java
+			//artifact sourcesJar
+		//}
+	//}
+	//repositories{
+		//maven{
+			//url "file:/C:/macsDev/m2"
+		//}
+	//}
+//}

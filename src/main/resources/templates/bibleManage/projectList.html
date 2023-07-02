@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="common/common-layout2::common-main2">
+<head id="headContent">
+<meta charset="utf-8">
+</head>
+<body id="bodyContent">
+
+	<h3 class="bg-white">ドキュメント編集</h3>
+
+	<table id="dataTable2" data-url="/workweb/bibleManager/getProjectList"
+		th:data-columns="${columns}">
+	</table>
+</body>
+</html>

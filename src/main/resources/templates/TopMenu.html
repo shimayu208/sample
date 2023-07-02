@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="common/common-layout1::common-main1">
+<head id="headContent">
+<meta charset="utf-8">
+</head>
+<body>
+	<div id="bodyContent">
+		<div class="container-fluid">
+			<div class="row">
+				<h2 class="text-center m-2">作業管理メニュー</h2>
+			</div>
+			<div class="text-center m-2">
+			    <a th:href="@{/bibleManager/topicList}" class="btn btn-secondary">掲示板</a>
+			    <a th:href="@{/bibleManager/topicList}" class="btn btn-secondary">電話番号</a>
+			    <a th:href="@{/bibleManager/topicList}" class="btn btn-secondary">Omunibus View</a>
+			    <a th:href="@{/bibleManager/topicList}" class="btn btn-secondary">保守検索</a>
+			    <a th:href="@{/bibleManager/topicList}" class="btn btn-secondary">作業入力</a>
+			    <a th:href="@{/bibleManager/projectList}" class="btn btn-secondary">ドキュメント管理</a>
+			    <a th:href="@{/system/user}" class="btn btn-secondary">システム</a>
+			    <a th:href="@{/bibleManager/topicList}" class="btn btn-secondary">チャット</a>
+
+			</div>
+		</div>
+	</div>
+</body>
+</html>

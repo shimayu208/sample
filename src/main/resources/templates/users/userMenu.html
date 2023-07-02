@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="common/common-layout2::common-main2">
+<head id="headContent">
+<meta charset="utf-8">
+</head>
+<body>
+	<!-- ヘッダは50pxで固定 -->
+	<div id="bodyContent">
+		<div class="row bg-white">
+			<h3 class="text-center m-2" th:text="ユーザ管理"></h3>
+		</div>
+		<nav class="#">
+			<ul>
+				<li><a th:href="@{/user/userlist}">ユーザ一覧</a></li>
+				<li><a th:href="@{/userRegister}">ユーザ登録</a></li>
+				<li><a th:href="@{#}">ユーザ変更</a></li>
+				<li><a th:href="@{#}">ユーザ削除</a></li>
+			</ul>
+		</nav>
+	</div>
+</body>
+</html>

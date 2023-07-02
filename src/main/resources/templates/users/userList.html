@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="common/common-layout2::common-main2">
+<head id="headContent">
+
+<meta charset="utf-8">
+</head>
+<body>
+
+	<div id="bodyContent">
+		<div class="container-fluid bg-warning main-pattern2">
+			<div class="row">
+				<div class="subtitle">ユーザ一覧</div>
+			</div>
+			<div class="row">
+
+
+				<table id="dataTable1" class="table table-primary">
+					<thead>
+						<tr>
+							<th scope="col">id</th>
+							<th scope="col">name</th>
+							<th scope="col">mailaddress</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr th:if="${!#lists.isEmpty(userList)}"
+							th:each="user : ${userList}">
+							<td scope="row" th:text="${user.id}"></td>
+							<td th:text="${user.name}"></td>
+							<td th:text="${user.mailaddress}"></td>
+						</tr>
+					</tbody>
+				</table>
+
+<!-- 				<table id="dataTable1" class="" data-url=""
+					th:data-columns="${columns}"></table> -->
+
+				<script>
+					$('#dataTable1').DataTable({
+						paging : true,
+						lengthChange : false,
+						pageLength : 10,
+						searching : true,
+						ordering : true,
+						info : true
+					});
+				</script>
+
+
+			</div>
+
+
+		</div>
+	</div>
+</body>
+</html>

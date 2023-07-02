@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="common/common-layout2::common-main2">
+<head id="headContent">
+<meta charset="utf-8">
+</head>
+<body id="bodyContent">
+
+	<h3 class="bg-white">案件一覧/作成</h3>
+
+	<table id="dataTable2" data-url="/workweb/bibleManager/getPullPushList"
+		th:data-columns="${columns}">
+	</table>
+</body>
+</html>

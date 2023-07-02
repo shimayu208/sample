@@ -1,0 +1,59 @@
+/* 
+共通メニューレイアウト
+.common-menu-layout {
+	background-color: #e5e0e0;
+	height: 100vh;
+	width: 15%
+}
+
+共通メニュー項目
+.common-menu-item {
+	background-color: white;
+	padding: 5px;
+	margin: 5px;
+	border: true;
+}
+ */
+
+/* ヘッダの高さを50pxに指定 */
+header {
+	height: 50px;
+}
+
+body {
+	font-family: sans-serif;
+	/* padding-top:50px; */
+}
+
+.menu-bar {
+	position: fixed;
+	height: 100vh;
+	width: 170px;
+}
+
+.main-pattern1 {
+	/* second-menuなしのためpaddingなし */
+	
+}
+
+.main-pattern2 {
+	padding-left: 170px;
+	height: 100vh;
+}
+
+.subtitle {
+	padding: 2px;
+	background-color: white;
+	font-size: 30px;
+	text-align: center;
+}
+
+table {
+	margin: auto
+}
+
+label {
+	width: 200px;
+	padding-right: 20px;
+	padding-top: 5px;
+}

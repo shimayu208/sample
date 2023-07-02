@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:fragment="common-main2">
+<head>
+<th:block th:insert="common/common-parts::meta"></th:block>
+
+<!-- ↓ページごとに個別で読み込むもの -->
+<th:block th:insert="~{::#headContent}"></th:block>
+</head>
+
+<body>
+	<!-- ↓共通header用 -->
+	<th:block th:insert="common/common-parts::sagyo-web-header"></th:block>
+	<!-- ↓メニューバー -->
+	<th:block th:insert="common/common-parts::menu-bar"></th:block>
+	<!-- ↓個別のコンテンツ -->
+
+	<div class="main-pattern2 m-2 container-fluid" id="content"
+		th:insert="~{::#bodyContent}"></div>
+
+	<!-- ↓共通footer用 -->
+	<th:block th:insert="common/common-parts::sagyo-web-footer"></th:block>
+</body>
+</html>

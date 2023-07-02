@@ -1,0 +1,46 @@
+server:
+  port: 9000
+  servlet:
+    context-path: /workweb
+
+spring:
+  datasource:
+      url: jdbc:postgresql://localhost:5432/postgres
+      driverClassName: org.postgresql.Driver
+      username: postgres
+      password: root  
+
+  thymeleaf:
+    cache: false
+    
+  activemq:
+    broker-url: tcp://localhost:61616
+#    prefetch-policy: 
+#      queue-prefetch: 10
+    user: admin
+    password : admin
+  
+  jms:
+    listener:
+     concurrency: 5 
+     max-concurrency: 10
+
+#  messages:
+#    basename: messages
+#    cache-duration: -1
+#    encoding: UTF-8
+#      
+#        # アプリケーション起動時にデータベースを初期化しないようにする
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+logging:
+#    config: classpath:logback-spring.xml
+    file: 
+       name: log/web.log
+    level:
+      root: INFO #実行時のコンソールに出力されるやつ
+      org:
+        springframework:
+            web: WARN
+        hibernate: ERROR

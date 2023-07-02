@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+	<context id="PostgresTables" targetRuntime="MyBatis3">
+		<property name="javaFileEncoding" value="UTF-8" />
+		<property name="targetJava8" value="true" />
+		<plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
+		<plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">
+			<property name="searchString" value="Example" />
+			<property name="replaceString" value="Criteria" />
+		</plugin>
+		<plugin type="org.mybatis.generator.plugins.MapperAnnotationPlugin"/>
+		<plugin type="org.mybatis.generator.plugins.VirtualPrimaryKeyPlugin"/>
+		<commentGenerator>
+			<property name="supressData" value="true" />
+			<property name="supressAllComments" value="true" />
+		</commentGenerator>
+		<!-- スキーマ情報を取得する DB への接続設定 -->
+		<jdbcConnection 
+		driverClass="org.postgresql.Driver" 
+		connectionURL="jdbc:postgresql://localhost:5432/postgres" 
+		userId="postgres" 
+		password="root">
+		</jdbcConnection>
+
+		<javaTypeResolver type="org.mybatis.generator.internal.types.JavaTypeResolverDefaultImpl">
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+		<!-- SELECT 結果等を格納するドメインモデルを生成する設定 -->
+		<!--		<javaModelGenerator targetPackage="com.example.demo.entity" targetProject="Bible_Manage/src/main/java/com/example/demo/websocket">
+			<property name="enableSubPackages" value="false" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>-->
+		<javaModelGenerator targetPackage="com.example.demo.entity" targetProject="Bible_Manage">
+			<property name="enableSubPackages" value="false" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+
+		<!-- SQL 設定が記述された XML を生成する設定 -->
+		<!--    <sqlMapGenerator targetPackage="com/lab/app/ketman/mybatis" targetProject="※プロジェクト名※/src/main/resources">
+      <property name="enableSubPackages" value="true" />
+    </sqlMapGenerator>-->
+		<!-- マッパークラスを生成する設定 -->
+		<javaClientGenerator type="ANNOTATEDMAPPER" targetPackage="com.example.repository.entity" targetProject="Bible_Manage">
+			<property name="enableSubPackages" value="false" />
+		</javaClientGenerator>
+
+		<!-- コードを生成するテーブルを指定 -->
+<!--		<table tableName="files">
+			<property name="useActualColumnNames" value="false" />
+		</table>
+		<table tableName="folders">
+			<property name="useActualColumnNames" value="false" />
+		</table>
+		<table tableName="pullpush">
+			<property name="useActualColumnNames" value="false" />
+		</table>-->
+		<table tableName="users">
+			<property name="useActualColumnNames" value="false" />
+		</table>
+				<table tableName="role">
+			<property name="useActualColumnNames" value="false" />
+		</table>
+
+	</context>
+</generatorConfiguration>
